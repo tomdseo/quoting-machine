@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="/style.css" rel="stylesheet"/>
+    <title>Quotes</title>
+</head>
+<body>
+<div class="mx-auto">
+    <p class="display-3 text-center">The Quote Library</p>
+    <% if(quotes.length > 0) { %>
+        <% for(let i= quotes.length-1; i > 0; i--) { %>
+            <div class="mx-auto w-25">
+                <p class="display-4" style="color: darkseagreen">"<%= quotes[i].quote %>"</p>
+                <p class="lead font-italic ml-5">-<%= quotes[i].name%> at <%= quotes[i].createdAt%></p>
+            </div>
+        <% } %>
+    <% } else { %>
+        <div class="mx-auto w-25 text-center">
+            <p class="display-4 mt-5">Empty.</p>
+        </div>
+    <% } %>
+
+</div>
+</body>
+</html>

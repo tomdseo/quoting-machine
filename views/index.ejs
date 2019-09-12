@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="/style.css" rel="stylesheet"/>
+    <title>Quotes</title>
+</head>
+<body>
+    <div class="mx-auto">
+        <p class="display-3 text-center">The Quoting Machine</p>
+        <form action="/submit" method="post" class="w-25 mx-auto mt-5">
+            <div class="mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name</span>
+                    </div>
+                    <input type="text" name="name" class="form-control">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Quote</span>
+                    </div>
+                    <textarea type="text" name="quote" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="mt-4">
+                <input type="submit" class="btn btn-success" value="Add My Quote">
+                <a href="/quotes" class="btn btn-primary ml-3">Skip to Quotes</a>
+            </div>
+        </form>
+        <div class="w-25 mx-auto mt-4">
+            <% JSON.stringify(messages) %>
+            <% if(messages.registration) { %>
+                <% for (var x of messages.registration) { %>
+                    <h3><%= x %></h3>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

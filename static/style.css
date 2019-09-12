@@ -1,0 +1,7 @@
+body {
+    padding: 50px;
+}
+
+textarea {
+    resize: none;
+}
